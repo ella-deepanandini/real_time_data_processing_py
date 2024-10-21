@@ -25,6 +25,7 @@ Usage : Run the script to start fetching and displaying weather data for the cit
 * Imports : Requests.
             Time.
             Defaultdict.
+  
 * City Lists : This is a predefined list of major cities in india for which the weather data will be fetched.
   
 * API Key : You need an API key from OpenWeatherMap to fectch the weather data.
@@ -35,22 +36,29 @@ Usage : Run the script to start fetching and displaying weather data for the cit
   
 * Function : get_weather(city).
   1)Sends a GET request to OpenWeatherMap's API to fetch weather data for a specific city.
+  
   2)The parameters include the city name, API key, and the unit of temperature (metric for Celsius).
+  
   3)Returns the response in JSON format.
 
 * Function : store_weather_data(city,temp).
    1)Stores the temperature temp for a city in the weather_data_store.
+  
    2)If there are more than 10 temperature records for a city, it removes the oldest entry to keep only the latest 10.
+  
 
 * Function : calculate_aggregates(city)
    1)This function calculates the average, maximum, and minimum temperatures for a city based on its stored data.
-  2)If there are no temperatures stored for the city, it returns.
+  
+   2)If there are no temperatures stored for the city, it returns.
 
 * Function : print_weather_data_aggregates(city,weather_data)
 
-* Main Loop :This is the main function that runs an infinite loop.
-             Every 5 minutes (300 seconds), it fetches weather data for all the cities in the cities list and prints the data.
-             After fetching the data, it pauses for 5 minutes before fetching again.
+* Main Loop : 1)This is the main function that runs an infinite loop.
+  
+              2) Every 5 minutes (300 seconds), it fetches weather data for all the cities in the cities list and prints the data.
+  
+              3) After fetching the data, it pauses for 5 minutes before fetching again.
 
 * Entry point : This ensures that the main function is executed only when the script is run directly.
 
